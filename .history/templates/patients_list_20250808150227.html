@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Liste des patients</title>
+    </head>
+    <body>
+        <h1>Liste des patients</h1>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Age</th>
+                <th>Glucose</th>
+                <th>BMI</th>
+                <th>Résultat</th>
+                <th>Actions</th>
+            </tr>
+            (% for patient in patients %)
+            <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.glucose }}</td>
+                <td>{{ patient.bmi }}</td>
+                <td>{{ "Diabétique" if patient.result == 1 else "Non diabétique" }}</td>
+                <td>
+                    <a href="/edit/{{ patient.id }}">Modifier</a> |
+                    <a href="/delete/{{ patient.id }}">Supprimer</a>
+                </td>
+
+
+
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </table>
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
